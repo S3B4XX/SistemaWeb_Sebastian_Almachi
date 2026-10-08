@@ -86,8 +86,8 @@ dotnet --version
 1. Clona el repositorio y entra a la carpeta:
 
    ```bash
-   git clone <URL-DEL-REPOSITORIO>
-   cd <CARPETA-DEL-REPOSITORIO>
+   git clone https://github.com/S3B4XX/SistemaWeb_Sebastian_Almachi.git
+   cd SistemaWeb_Sebastian_Almachi
    ```
 
 2. Restaura las dependencias y ejecuta:

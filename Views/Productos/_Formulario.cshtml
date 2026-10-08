@@ -1,0 +1,39 @@
+@model Producto
+
+@* Campos del formulario. Se reutiliza en Create y Edit para no repetir código. *@
+
+@* El Id va oculto: en Edit indica qué producto se actualiza (en Create vale 0). *@
+<input type="hidden" asp-for="Id" />
+
+@* Errores generales del formulario *@
+<div asp-validation-summary="ModelOnly" class="alert alert-danger" role="alert"></div>
+
+<p class="mb-3">
+    <label asp-for="Nombre" class="form-label"></label>
+    <input asp-for="Nombre" class="form-control" aria-required="true" />
+    <span asp-validation-for="Nombre" class="text-danger"></span>
+</p>
+
+<p class="mb-3">
+    <label asp-for="Categoria" class="form-label"></label>
+    <input asp-for="Categoria" class="form-control" aria-required="true" />
+    <span asp-validation-for="Categoria" class="text-danger"></span>
+</p>
+
+<p class="mb-3">
+    <label asp-for="Precio" class="form-label"></label>
+    <input asp-for="Precio" class="form-control" type="number" step="0.01" min="0" aria-required="true" />
+    <span asp-validation-for="Precio" class="text-danger"></span>
+</p>
+
+<p class="mb-3">
+    <label asp-for="Stock" class="form-label"></label>
+    <input asp-for="Stock" class="form-control" type="number" step="1" min="0" aria-required="true" />
+    <span asp-validation-for="Stock" class="text-danger"></span>
+</p>
+
+<p class="mb-0">
+    <label asp-for="Descripcion" class="form-label"></label>
+    <textarea asp-for="Descripcion" class="form-control" rows="3"></textarea>
+    <span asp-validation-for="Descripcion" class="text-danger"></span>
+</p>

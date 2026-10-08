@@ -1,0 +1,58 @@
+@page
+@model LoginModel
+@{
+    ViewData["Title"] = "Iniciar sesión";
+}
+
+@* Vista de presentación: solo dibuja el formulario.
+   La lógica de autenticación está en Login.cshtml.cs. *@
+<section class="row justify-content-center py-5" aria-labelledby="titulo-login">
+    <article class="col-12 col-md-8 col-lg-5">
+        <form id="formulario-login" method="post" class="card shadow-sm border-0">
+            <header class="card-header bg-primary text-white text-center py-3">
+                <h1 id="titulo-login" class="h4 mb-1">Iniciar sesión</h1>
+                <p class="small mb-0">Ingrese sus credenciales para acceder al sistema</p>
+            </header>
+
+            <fieldset class="card-body p-4">
+                <legend class="visually-hidden">Datos de acceso</legend>
+
+                @* Errores generales, por ejemplo "Correo o contraseña incorrectos." *@
+                <div asp-validation-summary="ModelOnly" class="alert alert-danger" role="alert"></div>
+
+                <p class="mb-3">
+                    <label asp-for="Input.Email" class="form-label"></label>
+                    <input asp-for="Input.Email" class="form-control" type="email"
+                           autocomplete="username" aria-required="true" placeholder="nombre@correo.com" />
+                    <span asp-validation-for="Input.Email" class="text-danger"></span>
+                </p>
+
+                <p class="mb-3">
+                    <label asp-for="Input.Password" class="form-label"></label>
+                    <input asp-for="Input.Password" class="form-control"
+                           autocomplete="current-password" aria-required="true" placeholder="Su contraseña" />
+                    <span asp-validation-for="Input.Password" class="text-danger"></span>
+                </p>
+
+                <p class="form-check mb-4">
+                    <input asp-for="Input.RememberMe" class="form-check-input" />
+                    <label asp-for="Input.RememberMe" class="form-check-label"></label>
+                </p>
+
+                <button id="boton-login" type="submit" class="btn btn-primary w-100">Iniciar sesión</button>
+            </fieldset>
+
+            <footer class="card-footer bg-white text-center py-3">
+                <p class="mb-0">
+                    ¿No tiene una cuenta?
+                    <a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">Regístrese</a>
+                </p>
+            </footer>
+        </form>
+    </article>
+</section>
+
+@section Scripts {
+    @* Validación en el navegador antes de enviar el formulario *@
+    <partial name="_ValidationScriptsPartial" />
+}

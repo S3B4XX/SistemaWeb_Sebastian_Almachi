@@ -1,0 +1,27 @@
+# ---------- Visual Studio ----------
+.vs/
+*.user
+*.suo
+*.userprefs
+
+# ---------- Compilación de .NET ----------
+[Bb]in/
+[Oo]bj/
+[Dd]ebug/
+[Rr]elease/
+*.log
+
+# ---------- Base de datos local (SQLite) ----------
+# Se crea sola al ejecutar la app; no debe subirse al repositorio.
+*.db
+*.db-shm
+*.db-wal
+
+# ---------- Secretos y configuración local ----------
+appsettings.*.local.json
+secrets.json
+.env
+
+# ---------- Sistema operativo ----------
+Thumbs.db
+.DS_Store

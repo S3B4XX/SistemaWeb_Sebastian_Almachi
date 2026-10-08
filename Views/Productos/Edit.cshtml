@@ -1,0 +1,29 @@
+@model Producto
+@{
+    ViewData["Title"] = "Editar producto";
+}
+
+<section class="row justify-content-center py-4" aria-labelledby="titulo-editar">
+    <article class="col-12 col-md-9 col-lg-6">
+        <form asp-action="Edit" method="post" class="card shadow-sm border-0">
+            <header class="card-header">
+                <h1 id="titulo-editar" class="h4 mb-0">Editar producto</h1>
+            </header>
+
+            <fieldset class="card-body p-4">
+                <legend class="visually-hidden">Datos del producto</legend>
+                <partial name="_Formulario" />
+            </fieldset>
+
+            <footer class="card-footer d-flex justify-content-end gap-2">
+                <a asp-action="Index" class="btn btn-outline-secondary">Cancelar</a>
+                <button type="submit" class="btn btn-primary">Guardar cambios</button>
+            </footer>
+        </form>
+    </article>
+</section>
+
+@section Scripts {
+    @* Validación en el navegador antes de enviar el formulario *@
+    <partial name="_ValidationScriptsPartial" />
+}

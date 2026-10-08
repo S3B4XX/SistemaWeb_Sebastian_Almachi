@@ -1,0 +1,9 @@
+@{
+    ViewData["Title"] = "Inicio";
+}
+
+<section class="text-center py-5" aria-labelledby="titulo-inicio">
+    <h1 id="titulo-inicio" class="display-5">Bienvenido, @User.Identity?.Name</h1>
+    <p class="lead">Desde aquí puede administrar el inventario de productos.</p>
+    <a asp-controller="Productos" asp-action="Index" class="btn btn-primary btn-lg">Ir a Productos</a>
+</section>
